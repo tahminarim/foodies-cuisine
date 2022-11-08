@@ -5,18 +5,20 @@
 	</defs>
 	<style>
 		tspan { white-space:pre } 
-		.s0 { opacity: .9;fill-opacity: .7;fill: #ffffff } 
-		.t1 { font-size: 22px;fill: #1a1a1a;font-weight: 700;font-style: italic;font-family: "NotoSerif-SemiCondensedBoldItalic", "Noto Serif SemCond" } 
-		.t2 { font-size: 120px;fill: #1a1a1a;font-weight: 800;font-family: "Mukta-ExtraBold", "Mukta" } 
+		.s0 { fill-opacity: .7;fill: #ffffff } 
+		.t1 { font-size: 48px;fill: #0e5711;font-weight: 700;font-style: italic;font-family: "NotoSerif-SemiCondensedBoldItalic", "Noto Serif SemCond" } 
+		.t2 { font-size: 120px;fill: #3fe945;font-weight: 800;font-family: "Mukta-ExtraBold", "Mukta" } 
 	</style>
 	<use id="nasta.psd" href="#img1" transform="matrix(3.237,0,0,3.237,-8,-178)"/>
-	<path id="Strip" class="s0" d="m144 231h992v432h-992z"/>
-	<text id="Enjoy your food with us" style="transform: matrix(1,0,0,1,681.585,373.113)" >
-		<tspan x="-124.6" y="0" class="t1">E</tspan><tspan  y="0" class="t1">n</tspan><tspan  y="0" class="t1">j</tspan><tspan  y="0" class="t1">o</tspan><tspan  y="0" class="t1">y</tspan><tspan  y="0" class="t1"> </tspan><tspan  y="0" class="t1">y</tspan><tspan  y="0" class="t1">o</tspan><tspan  y="0" class="t1">u</tspan><tspan  y="0" class="t1">r</tspan><tspan  y="0" class="t1"> </tspan><tspan  y="0" class="t1">f</tspan><tspan  y="0" class="t1">o</tspan><tspan  y="0" class="t1">o</tspan><tspan  y="0" class="t1">d</tspan><tspan  y="0" class="t1"> </tspan><tspan  y="0" class="t1">w</tspan><tspan  y="0" class="t1">i</tspan><tspan  y="0" class="t1">t</tspan><tspan  y="0" class="t1">h</tspan><tspan  y="0" class="t1"> </tspan><tspan  y="0" class="t1">u</tspan><tspan  y="0" class="t1">s
+	<path id="Strip" class="s0" d="m97 94h992v432h-992z"/>
+	<text id="Enjoy your food with us" style="transform: matrix(1,0,0,1,679.585,419.113)" >
+		<tspan x="-271.8" y="0" class="t1">E</tspan><tspan  y="0" class="t1">n</tspan><tspan  y="0" class="t1">j</tspan><tspan  y="0" class="t1">o</tspan><tspan  y="0" class="t1">y</tspan><tspan  y="0" class="t1"> </tspan><tspan  y="0" class="t1">y</tspan><tspan  y="0" class="t1">o</tspan><tspan  y="0" class="t1">u</tspan><tspan  y="0" class="t1">r</tspan><tspan  y="0" class="t1"> </tspan><tspan  y="0" class="t1">f</tspan><tspan  y="0" class="t1">o</tspan><tspan  y="0" class="t1">o</tspan><tspan  y="0" class="t1">d</tspan><tspan  y="0" class="t1"> </tspan><tspan  y="0" class="t1">w</tspan><tspan  y="0" class="t1">i</tspan><tspan  y="0" class="t1">t</tspan><tspan  y="0" class="t1">h</tspan><tspan  y="0" class="t1"> </tspan><tspan  y="0" class="t1">u</tspan><tspan  y="0" class="t1">s
 </tspan>
 	</text>
 	<text id="FOODIES CUISINE" style="transform: matrix(1,0,0,1,566.221,340.474)" >
 		<tspan x="-462.3" y="0" class="t2">F</tspan><tspan  y="0" class="t2">O</tspan><tspan  y="0" class="t2">O</tspan><tspan  y="0" class="t2">D</tspan><tspan  y="0" class="t2">I</tspan><tspan  y="0" class="t2">E</tspan><tspan  y="0" class="t2">S</tspan><tspan  y="0" class="t2"> </tspan><tspan  y="0" class="t2">C</tspan><tspan  y="0" class="t2">U</tspan><tspan  y="0" class="t2">I</tspan><tspan  y="0" class="t2">S</tspan><tspan  y="0" class="t2">I</tspan><tspan  y="0" class="t2">N</tspan><tspan  y="0" class="t2">E</tspan><tspan  y="0" class="t2">
 </tspan>
+	</text>
+	<text id="" style="transform: matrix(1,0,0,1,345,258)" >
 	</text>
 </svg>
