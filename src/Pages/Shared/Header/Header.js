@@ -10,7 +10,11 @@ const Header = () => {
         <li className='font-bold text-xl text-success'><Link to='/'>Parties&Events</Link></li>
 
         <li className='font-bold text-xl text-success'><Link to='/'>Blogs</Link></li>
+        <li className='font-bold text-xl text-success'><Link to='/login'>Login</Link></li>
+        <li className='font-bold text-xl text-success'><Link to='/signup'>SignUp</Link></li>
+        
 
+        
     </>
     return (
         <div className="navbar bg-base-100">
