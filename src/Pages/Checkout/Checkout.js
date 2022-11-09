@@ -22,6 +22,25 @@ const Checkout = () => {
             phone,
             message
         }
+
+        fetch('https://b6a11-service-review-server-side-tahminarim.vercel.app/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderList)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.acknowledged){
+                    alert('Order placed successfully')
+                    form.reset();
+                    
+                }
+            })
+            .catch(err => console.error(err));
+
     
     }
 

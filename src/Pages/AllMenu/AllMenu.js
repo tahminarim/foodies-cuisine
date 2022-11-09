@@ -4,7 +4,7 @@ import SingleMenu from './SingleMenu';
 const AllMenu = () => {
     const [menus, setMenus] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allmenu')
+        fetch('https://b6a11-service-review-server-side-tahminarim.vercel.app/allmenu')
             .then(res => res.json())
             .then(data => setMenus(data))
     }, [])

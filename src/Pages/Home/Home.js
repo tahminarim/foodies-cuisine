@@ -7,7 +7,7 @@ import './Home'
 const Home = () => {
     const [menus, setMenus] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/threemenu')
+        fetch('https://b6a11-service-review-server-side-tahminarim.vercel.app/threemenu')
             .then(res => res.json())
             .then(data => setMenus(data))
     }, [])
