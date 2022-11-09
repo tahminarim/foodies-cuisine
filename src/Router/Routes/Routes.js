@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import AllMenu from "../../Pages/AllMenu/AllMenu";
-import SingleMenu from "../../Pages/AllMenu/SingleMenu";
+import MenuDetails from "../../Pages/AllMenu/MenuDetails";
+import Checkout from "../../Pages/Checkout/Checkout";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Signup from "../../Pages/Signup/Signup";
@@ -28,8 +29,18 @@ const router= createBrowserRouter([
                 element: <AllMenu></AllMenu>
             },
             {
+                path: '/threemenu',
+                element: <AllMenu></AllMenu>
+            },
+            {
                 path: '/allmenu/:id',
-                element: <SingleMenu></SingleMenu>
+                element: <MenuDetails> </MenuDetails>,
+                loader: ({params})=>fetch(`http://localhost:5000/allmenu/${params.id}`)
+            },
+            {
+                path: '/checkout/:id',
+                element: <Checkout></Checkout>,
+                loader: ({params})=>fetch(`http://localhost:5000/allmenu/${params.id}`)
             },
 
 

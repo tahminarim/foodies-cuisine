@@ -10,8 +10,8 @@ const SingleMenu = ({menu}) => {
     <div>
       <h1 className="text-5xl font-bold">{menu_name}</h1>
       <p className="py-6">{price}€ per person</p>
-      <button className="btn  btn-outline btn-success">See More </button>
-      <Link to={`/allmenu/${_id}`}> <button className="btn btn-success">Buy Now</button></Link>
+      <Link to={`/allmenu/${_id}`}> <button className="btn  btn-outline btn-success">See More </button></Link>
+      <Link to={`/checkout/${_id}`}> <button className="btn btn-success">Buy Now</button></Link>
 
     </div>
   </div>
