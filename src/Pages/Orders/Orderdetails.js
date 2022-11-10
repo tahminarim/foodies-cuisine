@@ -10,20 +10,14 @@ const Orderdetails = ({ order }) => {
             <td>
                 <div className="font-bold">{customer}</div>
             </td>
-            <td>
-                <div className="text-sm opacity-50">{phone}</div>
-            </td>
+         
 
             <td>
                 {menuName}
 
             </td>
             <td>
-            <Link to={`/reviews/${_id}`}>
-                
-             <button className="btn btn-success text-white m-2 text-sm lg:text-xl mt-2">Add Review</button>
-             
-             </Link>
+            <Link to={`/reviews/${_id}`}> <button className="btn btn-success text-white m-2 text-xs lg:text-xl lg:mt-2">Add Order</button></Link>
             
             </td>
 

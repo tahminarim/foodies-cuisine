@@ -42,7 +42,7 @@ const Header = () => {
         <li className='font-bold text-xl text-success'><Link to='/histories'>OurHistory</Link></li>
 
         <li className='font-bold text-xl text-success'><Link to='/'>Catering</Link></li>
-        <li className='font-bold text-xl text-success'><Link to='/'> Parties&Events </Link></li>
+        <li className='font-bold text-xl text-success'><Link to='/'>Events </Link></li>
 
         <li className='font-bold text-xl text-success'><Link to='/orders'>Orders</Link></li>
         <li className='font-bold text-xl text-success'><Link to='/'>Blogs</Link></li>
@@ -50,7 +50,7 @@ const Header = () => {
         {
             user?.email ?
                 <>
-                    <li className='font-bold text-xl text-success'><Link to='/'>My Reviews</Link></li>
+                    <li className='font-bold text-xl text-success'><Link to='/myreviews'>My Reviews</Link></li>
                     <li className='font-bold text-xl text-success'><Link to='/'>Add Menu</Link></li>
                     <li className='font-bold text-xl text-success'><Link to='/'><button onClick={handleLogout}>Sign Out </button></Link></li>
                 </> :
@@ -90,7 +90,7 @@ const Header = () => {
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0">
+                    <ul className="menu menu-horizontal p-4 m-5">
 
                         {menu}
                     </ul>
@@ -99,9 +99,10 @@ const Header = () => {
                     {
                         user?.email ?
                             <>
-                                <img style={{ height: '50px' }} src={user?.photoURL} alt="" />
-                                <Link className='font-bold text-3xl lg:text-xl text-success sm:mr-5' to='/login'>{user?.displayName || user?.name} </Link>
-
+                                
+                                <Link className='font-bold text-lg lg:text-xl text-white sm:mr-5' to='/login'><button className="btn btn-outline btn-success">{user?.displayName || user?.name} </button></Link>
+                                
+                                <img style={{ height: '50px' }} src={user?.photoURL} alt="" className='rounded-full' />
                             </>
 
                             :
