@@ -7,15 +7,13 @@ import 'react-photo-view/dist/react-photo-view.css';
 const SingleMenu = ({ menu }) => {
   const { _id, img, description, price, menu_name } = menu;
   return (
-    <div className="hero  bg-base-200">
+    <div className="hero mr-3 bg-base-200">
       <div className="hero-content flex-col lg:flex-col">
 
         <div>
           <PhotoProvider>
             <PhotoView src={img}>
-              <img alt="dish" src={img} className="max-w-sm rounded-lg shadow-2xl" />
-
-
+              <img alt="dish" src={img} className="max-w-xs rounded-lg shadow-2xl" />
             </PhotoView>
           </PhotoProvider>
         </div>
@@ -26,14 +24,15 @@ const SingleMenu = ({ menu }) => {
           {
             description.length > 150 ?
               <p> {description.slice(0, 100) + '...'}
-                <Link to={`/allmenu/${_id}`}> <button className="btn  btn-outline btn-success mt-2">See More </button></Link>
               </p>
               :
               <p>{description}</p>
           }
 
-
-          <Link to={`/checkout/${_id}`}> <button className="btn btn-success mt-2">Buy Now</button></Link>
+          <div className='flex justify-between'>
+            <Link to={`/allmenu/${_id}`}> <button className="btn  btn-outline btn-success m-2">See More </button></Link>
+            <Link className='' to={`/checkout/${_id}`}> <button className="btn btn-success text-white m-2 ">Buy Now</button></Link>
+          </div>
 
         </div>
       </div>

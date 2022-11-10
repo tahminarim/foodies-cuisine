@@ -8,6 +8,17 @@ import { FaGoogle } from 'react-icons/fa';
 const Header = () => {
 
     const { user, googleProviderLogin, logOut } = useContext(AuthContext);
+
+   if(user?.email){
+    var str=user.email;
+    var nameParts = str.split("@");
+    var name = nameParts.length==2 ? nameParts[0] : null;
+    //console.log(name)
+    user.name=name;
+    
+   }
+  // console.log(name)
+
     //google authetication
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignin = () => {
@@ -27,8 +38,10 @@ const Header = () => {
     const menu = <>
         <li className='font-bold text-xl text-success'><Link to='/'>Home</Link></li>
         <li className='font-bold text-xl text-success'><Link to='/allmenu'>Menu</Link></li>
-        
-        <li className='font-bold text-xl text-success'><Link to='/'>Catering</Link></li>       
+
+        <li className='font-bold text-xl text-success'><Link to='/histories'>OurHistory</Link></li>
+
+        <li className='font-bold text-xl text-success'><Link to='/'>Catering</Link></li>
         <li className='font-bold text-xl text-success'><Link to='/'> Parties&Events </Link></li>
 
         <li className='font-bold text-xl text-success'><Link to='/orders'>Orders</Link></li>
@@ -38,7 +51,7 @@ const Header = () => {
             user?.email ?
                 <>
                     <li className='font-bold text-xl text-success'><Link to='/'>My Reviews</Link></li>
-                    <li className='font-bold text-xl text-success'><Link to='/'>Add New Menu</Link></li>
+                    <li className='font-bold text-xl text-success'><Link to='/'>Add Menu</Link></li>
                     <li className='font-bold text-xl text-success'><Link to='/'><button onClick={handleLogout}>Sign Out </button></Link></li>
                 </> :
 
@@ -52,7 +65,12 @@ const Header = () => {
     </>
     return (
         <div>
-            <h1 className='text-green-600 text-center text-4xl font-bold font-serif'> FOODIS CUISINE</h1>
+            <div className='flex justify-center mt-5'>
+                <Link to="/" className="">
+                    <img alt='' src={logo} />
+                </Link>
+                <h1 className='text-green-600 text-center text-4xl font-bold font-serif'> FOODIS CUISINE</h1>
+            </div>
             <div className="navbar bg-base-100">
 
                 <div className="navbar-start">
@@ -68,9 +86,7 @@ const Header = () => {
                             {menu}
                         </ul>
                     </div>
-                    <Link to="/" className="">
-                        <img alt='' src={logo} />
-                    </Link>
+
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -82,13 +98,17 @@ const Header = () => {
                 <div className="navbar-end">
                     {
                         user?.email ?
+                            <>
+                                <img style={{ height: '50px' }} src={user?.photoURL} alt="" />
+                                <Link className='font-bold text-3xl lg:text-xl text-success sm:mr-5' to='/login'>{user?.displayName || user?.name} </Link>
 
-                            <li className='font-bold text-xl text-success'><Link to='/login'>{user?.displayName || user?.name} </Link></li>
+                            </>
+
                             :
                             <Link onClick={handleGoogleSignin} className="btn btn-outline btn-success text-white">
-                                 <span className='text-warning'> < FaGoogle /></span>  &nbsp; 
-                                 <span className='text-warning'> Sign in</span>
-                                
+                                <span className='text-warning'> < FaGoogle /></span>  &nbsp;
+                                <span className='text-warning'> Sign in</span>
+
                             </Link>
 
                     }

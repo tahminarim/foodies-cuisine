@@ -1,30 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import SingleMenu from './SingleMenu';
+import Reviews from '../Reviews/Reviews';
+import History from './History';
 
-const AllMenu = () => {
+const Histories = () => {
     const [menus, setMenus] = useState([]);
     useEffect(() => {
         fetch('https://b6a11-service-review-server-side-tahminarim.vercel.app/allmenu')
             .then(res => res.json())
             .then(data => setMenus(data))
     }, [])
-    return (
-        <div className=''>
-            <div className='text-center mb-4 '>
-                <h2 className="text-5xl font-semibold text-green-500">Our Menu List </h2>
 
-            </div>
-            <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
+
+    return (
+        <div className='grid gap-4 grid-cols-2'>
+            <div className='grid gap-2 grid-cols-1  '>
                 {
-                    menus.map(menu => <SingleMenu
+                    menus.map(menu => <History
                         key={menu._id}
                         menu={menu}
-                    ></SingleMenu>)
+                    ></History>)
                 }
             </div>
+            <div>
+                <Reviews></Reviews>
+                
 
+            </div>
         </div>
     );
 };
 
-export default AllMenu;
+export default Histories;

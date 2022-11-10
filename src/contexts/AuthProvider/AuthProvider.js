@@ -9,7 +9,7 @@ const auth= getAuth(app);
 
 
 const AuthProvider = ({children}) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState([]);//null
     const [loading, setLoading] = useState(true);
 
     //google authetication
@@ -36,7 +36,7 @@ const AuthProvider = ({children}) => {
 
     useEffect( () =>{
         const unsubscribe = onAuthStateChanged(auth, currentUser =>{
-            console.log('current user',currentUser);
+            //console.log('receent user',currentUser);
             setUser(currentUser);
             setLoading(false);
         });
@@ -47,7 +47,8 @@ const AuthProvider = ({children}) => {
     }, [])
 
     const authInfo = {
-        user, 
+        user,
+        setUser, 
         loading,
         createUser, 
         login, 

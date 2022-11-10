@@ -3,9 +3,9 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Checkout = () => {
-    const {_id, menu_name, price, img } = useLoaderData();
+    const { _id, menu_name, price, img } = useLoaderData();
     const { user } = useContext(AuthContext);
-    const handleOrder= event =>{
+    const handleOrder = event => {
         event.preventDefault();
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`;
@@ -33,15 +33,15 @@ const Checkout = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.acknowledged){
+                if (data.acknowledged) {
                     alert('Order placed successfully')
                     form.reset();
-                    
+
                 }
             })
             .catch(err => console.error(err));
 
-    
+        event.target.reset();
     }
 
     return (
@@ -59,7 +59,7 @@ const Checkout = () => {
                     </div>
                     <form onSubmit={handleOrder}>
                         <div className='grid gap-5 justify-center'>
-                            
+
                             <input name="firstName" type="text" placeholder="First Name" className="input input-bordered input-success w-full  " />
                             <input name="lastName" type="text" placeholder="Last Name" className="input input-bordered input-success w-full  " />
                             <input name="phone" type="text" placeholder="Your Phone" className="input input-bordered input-success w-full  " />

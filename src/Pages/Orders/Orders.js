@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Orderdetails from './Orderdetails';
 
 const Orders = () => {
-    const {user,logOut} = useContext(AuthContext);
-    const [orders, setOrders] = useState([]) 
+    const { user, logOut } = useContext(AuthContext);
+    const [orders, setOrders] = useState([])
 
     useEffect(() => {
         fetch(`https://b6a11-service-review-server-side-tahminarim.vercel.app/orders?email=${user?.email}`)
@@ -21,7 +22,11 @@ const Orders = () => {
 
     return (
         <div>
-            <h2 className="text-5xl text-center text-green-600 m-8">You have {orders.length} Orders</h2>
+            <div className='grid grid-cols-1 justify-center'>
+                <h2 className="text-5xl text-center text-green-600 m-8">You have {orders.length} Orders</h2>
+                <Link to={`/allmenu`} className="btn  btn-outline btn-success m-2"> Add Orders </Link>
+
+            </div>
             <div className=" w-full">
                 <table className="table w-full mt-8 ">
                     <thead>
@@ -29,7 +34,7 @@ const Orders = () => {
                             <th>Name</th>
                             <th>Phone</th>
                             <th>Menu</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
@@ -42,6 +47,7 @@ const Orders = () => {
                     </tbody>
                 </table>
             </div>
+            
         </div>
     );
 };

@@ -16,7 +16,7 @@ const MenuDetails = () => {
 
                         <PhotoProvider>
                             <PhotoView src={img}>
-                                <img src={img} alt='' className="sm:m-5 p-5 min-w lg:max-w-lg rounded-lg shadow-2xl" />
+                                <img src={img} alt='' className="sm:m-2  max-w-xs lg:max-w-sm rounded-lg shadow-xl" />
 
                             </PhotoView>
                         </PhotoProvider>

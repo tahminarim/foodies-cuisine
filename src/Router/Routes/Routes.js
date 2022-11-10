@@ -7,6 +7,8 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Orders from "../../Pages/Orders/Orders";
 import Signup from "../../Pages/Signup/Signup";
+import Histories from "../../Pages/Histories/Histories";
+import AddReview from "../../Pages/Reviews/AddReview";
 
 const router= createBrowserRouter([
     {
@@ -30,6 +32,10 @@ const router= createBrowserRouter([
                 element: <AllMenu></AllMenu>
             },
             {
+                path: '/histories',
+                element: <Histories></Histories>
+            },
+            {
                 path: '/threemenu',
                 element: <AllMenu></AllMenu>
             },
@@ -43,6 +49,14 @@ const router= createBrowserRouter([
                 element: <Checkout></Checkout>,
                 loader: ({params})=>fetch(`https://b6a11-service-review-server-side-tahminarim.vercel.app/allmenu/${params.id}`)
             },
+            {
+                path: '/reviews/:id',
+                element: <AddReview> </AddReview>,
+                loader: ({params})=>fetch(`http://localhost:5000/reviews/${params.id}`)
+            
+
+            },
+
             {
                 path: '/orders',
                 element: <Orders></Orders>,
