@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleMenu from './SingleMenu';
+import { Helmet } from 'react-helmet';
 
 const AllMenu = () => {
     const [menus, setMenus] = useState([]);
@@ -10,6 +11,9 @@ const AllMenu = () => {
     }, [])
     return (
         <div className=''>
+            <Helmet>
+                <title>Menu | Foodis Cuisine</title>
+            </Helmet>
             <div className='text-center mb-4 '>
                 <h2 className="text-5xl font-semibold text-green-500">Our Menu List </h2>
 

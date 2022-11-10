@@ -34,12 +34,12 @@ const AddReview = () => {
                 console.log(data)
                 if (data.acknowledged) {
                     alert('Review added successfully')
-                    form.reset();
+                    
 
                 }
             })
             .catch(err => console.error(err));
-        event.target.reset();
+       event.target.reset();
 
     }
     return (

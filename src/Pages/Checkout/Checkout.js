@@ -23,7 +23,7 @@ const Checkout = () => {
             message
         }
 
-        fetch('https://b6a11-service-review-server-side-tahminarim.vercel.app/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

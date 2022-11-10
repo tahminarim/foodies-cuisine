@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SingleMenu from '../AllMenu/SingleMenu';
 import Banner from './Banner/Banner';
 import './Home'
+import UserAddedMenu from './UserAddedMenu/UserAddedMenu';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     const [menus, setMenus] = useState([]);
@@ -13,6 +15,9 @@ const Home = () => {
     }, [])
     return (
         <div className=' mt-5 w-full  '>
+            <Helmet>
+                <title> Home| Foodies Cuisin</title>
+            </Helmet>
             <div className='lg:ml-28'>
                 <Banner></Banner>
             </div>
@@ -35,6 +40,10 @@ const Home = () => {
 
                 </div>
 
+            </div>
+
+            <div>
+                <UserAddedMenu></UserAddedMenu>
             </div>
         </div>
     );

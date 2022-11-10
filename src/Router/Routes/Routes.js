@@ -11,6 +11,10 @@ import Histories from "../../Pages/Histories/Histories";
 import AddReview from "../../Pages/Reviews/AddReview";
 import MyReviews from "../../Pages/Reviews/MyReviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Blog from "../../Pages/Blog/Blog";
+import Catering from "../../Pages/Catering/Catering";
+import Event from "../../Pages/Event/Event";
+import AddMenu from "../../Pages/AddMenu/AddMenu";
 
 const router= createBrowserRouter([
     {
@@ -21,6 +25,19 @@ const router= createBrowserRouter([
                 path: '/',
                 element: <Home></Home>
             },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+            {
+                path: '/catering',
+                element: <Catering></Catering>
+            },
+            {
+                path: '/event',
+                element: <Event></Event>
+            },
+
             {
                 path: '/login',
                 element: <Login></Login>
@@ -50,6 +67,10 @@ const router= createBrowserRouter([
                 path: '/checkout/:id',
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
                 loader: ({params})=>fetch(`https://b6a11-service-review-server-side-tahminarim.vercel.app/allmenu/${params.id}`)
+            },
+            {
+                path: '/addmenu',
+                element: <AddMenu></AddMenu>,
             },
             {
                 path: '/reviews/:id',

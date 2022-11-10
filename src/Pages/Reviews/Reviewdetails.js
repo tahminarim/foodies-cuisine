@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Reviewdetails = ({ review }) => {
     const { _id, photoURL, menuName, message, customer } = review;
@@ -6,6 +7,7 @@ const Reviewdetails = ({ review }) => {
     return (
         <div className="m-5 bg-base-200">
             <div>
+            <Link to={`/reviews/${_id}`}> <button className="btn btn-success text-white m-2 text-xs  lg:mt-2">Add Review</button></Link>
 
                 <h1 className='text-3xl text-green-600 font-semibold mb-2'>Review for {menuName} </h1>
             </div>

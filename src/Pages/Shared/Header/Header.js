@@ -41,17 +41,17 @@ const Header = () => {
 
         <li className='font-bold text-xl text-success'><Link to='/histories'>OurHistory</Link></li>
 
-        <li className='font-bold text-xl text-success'><Link to='/'>Catering</Link></li>
-        <li className='font-bold text-xl text-success'><Link to='/'>Events </Link></li>
+        <li className='font-bold text-xl text-success'><Link to='/catering'>Catering</Link></li>
+        <li className='font-bold text-xl text-success'><Link to='/event'>Events </Link></li>
 
         <li className='font-bold text-xl text-success'><Link to='/orders'>Orders</Link></li>
-        <li className='font-bold text-xl text-success'><Link to='/'>Blogs</Link></li>
+        <li className='font-bold text-xl text-success'><Link to='/blog'>Blogs</Link></li>
 
         {
             user?.email ?
                 <>
                     <li className='font-bold text-xl text-success'><Link to='/myreviews'>My Reviews</Link></li>
-                    <li className='font-bold text-xl text-success'><Link to='/'>Add Menu</Link></li>
+                    <li className='font-bold text-xl text-success'><Link to='/addmenu'>Add Menu</Link></li>
                     <li className='font-bold text-xl text-success'><Link to='/'><button onClick={handleLogout}>Sign Out </button></Link></li>
                 </> :
 

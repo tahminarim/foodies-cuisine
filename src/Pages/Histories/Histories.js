@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Reviews from '../Reviews/Reviews';
 import History from './History';
 
@@ -22,8 +23,9 @@ const Histories = () => {
                 }
             </div>
             <div>
+
                 <Reviews></Reviews>
-                
+
 
             </div>
         </div>
