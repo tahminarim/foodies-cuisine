@@ -16,7 +16,7 @@ const Home = () => {
     return (
         <div className=' mt-5 w-full  '>
             <Helmet>
-                <title> Home| Foodies Cuisin</title>
+                <title> Home| Foodies Cuisine</title>
             </Helmet>
             <div className='lg:ml-28'>
                 <Banner></Banner>

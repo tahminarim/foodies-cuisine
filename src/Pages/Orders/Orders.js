@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Orderdetails from './Orderdetails';
@@ -22,6 +23,9 @@ const Orders = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Orders| Foodies Cuisin</title>
+            </Helmet>
             <div className='grid grid-cols-1 justify-center'>
                 <h2 className="text-5xl text-center text-green-600 m-8">You have ordered {orders.length} menu </h2>
                 <Link to={`/allmenu`} className="btn  btn-outline btn-success m-2"> Add Orders </Link>
@@ -47,7 +51,7 @@ const Orders = () => {
                     </tbody>
                 </table>
             </div>
-            
+
         </div>
     );
 };

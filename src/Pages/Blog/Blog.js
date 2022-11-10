@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Blog = () => {
     return (
         <div>
+            <Helmet>
+                <title>Blog| Foodies Cuisin</title>
+            </Helmet>
             <div className="collapse">
                 <input type="checkbox" className="peer" />
                 <div className="collapse-title bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">

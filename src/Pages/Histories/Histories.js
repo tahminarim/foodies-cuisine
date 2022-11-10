@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Reviews from '../Reviews/Reviews';
 import History from './History';
 
@@ -14,6 +14,9 @@ const Histories = () => {
 
     return (
         <div className='grid gap-4 grid-cols-2'>
+            <Helmet>
+                <title>Histories| Foodies Cuisine</title>
+            </Helmet>
             <div className='grid gap-2 grid-cols-1  '>
                 {
                     menus.map(menu => <History

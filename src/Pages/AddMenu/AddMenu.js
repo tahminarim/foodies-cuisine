@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const AddMenu = () => {
     const { user } = useContext(AuthContext);
@@ -20,7 +21,7 @@ const AddMenu = () => {
         const img = form.img.value;
         const price = form.price.value;
         const description = form.description.value;
-        const types =form.types.value;
+        const types = form.types.value;
 
         const menu = {
             email,
@@ -50,8 +51,11 @@ const AddMenu = () => {
 
 
         <div>
+            <Helmet>
+                <title>AddMenu| Foodies Cuisine</title>
+            </Helmet>
 
-            <h1 className='text-xl text-center text-green-600 font-semibold mb-2'> Thanks { user?.name ||  user?.displayName} in advice for add a new menu  </h1>
+            <h1 className='text-xl text-center text-green-600 font-semibold mb-2'> Thanks {user?.name || user?.displayName} in advice for add a new menu  </h1>
 
             <form onSubmit={addMenu}>
                 <div className='grid gap-5 justify-center'>
@@ -67,7 +71,7 @@ const AddMenu = () => {
 
 
 
-                    
+
                     <button onClick={showToastMessage}><input className='btn btn-success text-white' type="submit" value="Okay" /></button>
                     <ToastContainer />
 

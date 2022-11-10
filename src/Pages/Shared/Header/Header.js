@@ -12,7 +12,7 @@ const Header = () => {
    if(user?.email){
     var str=user.email;
     var nameParts = str.split("@");
-    var name = nameParts.length==2 ? nameParts[0] : null;
+    var name = nameParts.length===2 ? nameParts[0] : null;
     //console.log(name)
     user.name=name;
     

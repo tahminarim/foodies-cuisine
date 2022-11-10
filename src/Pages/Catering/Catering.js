@@ -2,11 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/favicon.png';
 import img1 from '../../assets/banner/3.png';
+import { Helmet } from 'react-helmet';
 
 
 const Catering = () => {
+
     return (
         <div className='py-5'>
+            <Helmet>
+                <title>Catering | Foodies Cuisine</title>
+            </Helmet>
             <div className="hero m-5  bg-green-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img alt="" src={img} className="max-w-sm rounded-lg shadow-2xl" />

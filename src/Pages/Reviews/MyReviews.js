@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import MyReviewDetails from './MyReviewDetails';
 
@@ -48,6 +49,9 @@ const MyReviews = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>MyReviews| Foodies Cuisine</title>
+            </Helmet>
             <div className='flex justify-center py-5'>
             <img style={{ height: '50px' }} src={user?.photoURL || user?.photoURL} alt="" className='rounded-full' />
             <h1 className="text-xl text-green-500 font-bold"> {user?.displayName || user?.name}!  </h1>
