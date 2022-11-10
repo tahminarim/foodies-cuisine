@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
 const MenuDetails = () => {
     const { menu_name, price, img, _id, description, types } = useLoaderData();
-
+    const {  loading } = useContext(AuthContext);
+    if (loading) {
+        return <>
+            <div class="flex justify-center items-center">
+                <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div></>
+    }
 
     return (
         <div>

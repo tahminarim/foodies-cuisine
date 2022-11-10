@@ -22,6 +22,23 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log('user login', user)
+        const presentUser = {
+          email: user.email
+        }
+        // get jwt token
+        fetch('http://localhost:5000/jwt', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(presentUser)
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            localStorage.setItem('foodies-token', data.token);
+           // navigate(from, { replace: true });
+          });
 
       })
       .catch(err => console.log(err));

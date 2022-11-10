@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
 const SingleMenu = ({ menu }) => {
   const { _id, img, description, price, menu_name } = menu;
+  const {  loading } = useContext(AuthContext);
+  if (loading) {
+    return <>
+        <div class="flex justify-center items-center">
+            <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div></>
+}
   return (
     <div className="hero mr-3 bg-base-200">
       <div className="hero-content flex-col lg:flex-col">

@@ -12,6 +12,7 @@ const Catering = () => {
             <Helmet>
                 <title>Catering | Foodies Cuisine</title>
             </Helmet>
+            
             <div className="hero m-5  bg-green-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img alt="" src={img} className="max-w-sm rounded-lg shadow-2xl" />

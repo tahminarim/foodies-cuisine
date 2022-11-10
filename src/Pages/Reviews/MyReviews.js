@@ -10,7 +10,11 @@ const MyReviews = () => {
 
     
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('foodies-token')}`
+            }
+        })
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
                     return logOut();
@@ -18,7 +22,7 @@ const MyReviews = () => {
                 return res.json();
             })
             .then(data => {
-                //console.log('my review', data)
+                //console.log('settle review', data)
                 setMyReviews(data);
             })
     }, [user?.email, logOut])

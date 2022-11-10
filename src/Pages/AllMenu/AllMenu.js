@@ -1,14 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import SingleMenu from './SingleMenu';
 import { Helmet } from 'react-helmet';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+
 
 const AllMenu = () => {
     const [menus, setMenus] = useState([]);
+    const {  loading } = useContext(AuthContext);
+
+
+
     useEffect(() => {
         fetch('https://b6a11-service-review-server-side-tahminarim.vercel.app/allmenu')
             .then(res => res.json())
             .then(data => setMenus(data))
     }, [])
+
+    if (loading) {
+        return <>
+            <div class="flex justify-center items-center">
+                <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div></>
+    }
     return (
         <div className=''>
             <Helmet>
